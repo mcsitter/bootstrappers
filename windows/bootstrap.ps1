@@ -9,3 +9,13 @@ if (!(Test-Elevated)) {
     Write-Host "Not running as Administrator"
     exit
 }
+
+# Install Chocolatey
+if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
+    Set-ExecutionPolicy Bypass -Scope Process -Force
+    $chocoInstaller = Invoke-WebRequest 'https://chocolatey.org/install.ps1' -UseBasicParsing
+    Invoke-Expression $chocoInstaller
+} else {
+    $chocoVersion = choco --version
+    Write-Host "chocolatey v$chocoVersion already installed."
+}
