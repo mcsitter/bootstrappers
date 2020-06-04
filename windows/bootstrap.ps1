@@ -37,3 +37,19 @@ if (!(Get-Command "git.exe" -ErrorAction SilentlyContinue)) {
 } else {
     Write-Host "git already installed."
 }
+
+# Clone repository
+$sourceDirectory = Join-Path $HOME "Source\"
+$bootstrappersDirectory = Join-Path $HOME "Source\bootstrappers"
+if (!(Test-Path $sourceDirectory)) {
+    Write-Host "Cloning repository into $bootstrappersDirectory"
+    $null = New-Item $sourceDirectory  -ItemType Directory
+    Push-Location $sourceDirectory
+    git clone https://github.com/mcsitter/bootstrappers.git
+    Pop-Location
+} else {
+    Write-Host "Pulling repository in $bootstrappersDirectory"
+    Push-Location $bootstrappersDirectory
+    git pull
+    Pop-Location
+}
