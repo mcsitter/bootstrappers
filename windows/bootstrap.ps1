@@ -27,3 +27,13 @@ if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
     $chocoVersion = choco --version
     Write-Host "chocolatey v$chocoVersion already installed."
 }
+
+# Install Git
+if (!(Get-Command "git.exe" -ErrorAction SilentlyContinue)) {
+    Write-Host "Installing Git"
+    choco install -y git --params="'/GitAndUnixToolsOnPath /NoShellIntegration'"
+
+    RefreshEnv.cmd
+} else {
+    Write-Host "git already installed."
+}
