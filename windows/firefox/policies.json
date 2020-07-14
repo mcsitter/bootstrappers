@@ -1,0 +1,52 @@
+{
+  "policies": {
+    "DisableFeedbackCommands": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "EnableTrackingProtection": {
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "Value": true
+    },
+    "ExtensionSettings": {
+      "enhancerforyoutube@maximerf.addons.mozilla.org": {
+        "install_url": "http://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/latest.xpi"
+      },
+      "https-everywhere@eff.org": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "jid1-BoFifL9Vbdl2zQ@jetpack": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/decentraleyes/latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "uBlock0@raymondhill.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi",
+        "installation_mode": "normal_installed"
+      }
+    },
+    "ExtensionUpdate": true,
+    "FirefoxHome": {
+      "Highlights": false,
+      "Pocket": false,
+      "Search": true,
+      "Snippets": false,
+      "TopSites": false
+    },
+    "Homepage": {
+      "StartPage": "previous-session"
+    },
+    "NoDefaultBookmarks": true,
+    "PasswordManagerEnabled": false,
+    "Preferences": {
+      "browser.search.update": true,
+      "extensions.getAddons.showPane": false
+    }
+  }
+}
