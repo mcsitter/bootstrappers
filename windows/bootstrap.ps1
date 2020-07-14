@@ -53,3 +53,8 @@ if (!(Test-Path $sourceDirectory)) {
     git pull
     Pop-Location
 }
+
+# Install Software
+$installScript = Join-Path $bootstrappersDirectory "windows\install.ps1"
+Write-Host "Running software install script"
+Invoke-Expression $installScript
