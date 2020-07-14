@@ -10,3 +10,10 @@ if (!(Test-Elevated)) {
     exit
 }
 
+# Install packages
+$chocoConfigDirectory = Join-Path $PSScriptRoot "chocolatey\"
+Push-Location $chocoConfigDirectory
+foreach ($chocoConfig in Get-ChildItem) {
+    choco install -y $chocoConfig
+}
+Pop-Location
