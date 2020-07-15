@@ -12,4 +12,6 @@
     "powershell.codeFormatting.autoCorrectAliases": true,
     "powershell.codeFormatting.preset": "OTBS",
     "powershell.codeFormatting.useCorrectCasing": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
 }
