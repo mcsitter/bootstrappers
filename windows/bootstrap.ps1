@@ -76,3 +76,8 @@ Invoke-Expression $installScript
 $firefoxScript = Join-Path $bootstrappersDirectory "windows\firefox\Set-FirefoxPolicy.ps1"
 Write-Host "Setting Firefox policies"
 Invoke-Expression $firefoxScript
+
+# Initialize VSCode
+$vscodeScript = Join-Path $bootstrappersDirectory "windows\vscode\Initialize-VSCode.ps1"
+Write-Host "Initializing VSCode"
+Invoke-Expression $vscodeScript
