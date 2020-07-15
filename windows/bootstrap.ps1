@@ -15,6 +15,14 @@ if (!(Test-Elevated)) {
 $debloatScript = Invoke-WebRequest 'https://raw.githubusercontent.com/Sycnex/Windows10Debloater/master/Windows10SysPrepDebloater.ps1' -UseBasicParsing
 Invoke-Expression $debloatScript
 
+# Rename windows drive
+Write-Host "Renaming windows drive"
+$WindowsDrive = Get-Volume -DriveLetter $Env:SystemDrive[0]
+$WindowsName = (Get-WmiObject win32_operatingsystem).Caption
+if (-Not ($WindowsDrive.FileSystemLabel -eq $WindowsName)) {
+    Set-Volume -InputObject $WindowsDrive -NewFileSystemLabel  $WindowsName
+}
+
 # Install Chocolatey
 if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Chocolatey"
