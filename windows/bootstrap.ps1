@@ -10,6 +10,11 @@ if (!(Test-Elevated)) {
     exit
 }
 
+# Debloat System
+# See https://github.com/Sycnex/Windows10Debloater for more info
+$debloatScript = Invoke-WebRequest 'https://raw.githubusercontent.com/Sycnex/Windows10Debloater/master/Windows10SysPrepDebloater.ps1' -UseBasicParsing
+Invoke-Expression $debloatScript
+
 # Install Chocolatey
 if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Chocolatey"
