@@ -14,4 +14,5 @@
     "powershell.codeFormatting.useCorrectCasing": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
+    "git.autofetch": true,
 }
