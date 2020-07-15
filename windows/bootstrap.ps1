@@ -72,6 +72,8 @@ $installScript = Join-Path $bootstrappersDirectory "windows\install.ps1"
 Write-Host "Running software install script"
 Invoke-Expression $installScript
 
+refreshenv
+
 # Set Firefox policies
 $firefoxScript = Join-Path $bootstrappersDirectory "windows\firefox\Set-FirefoxPolicy.ps1"
 Write-Host "Setting Firefox policies"
