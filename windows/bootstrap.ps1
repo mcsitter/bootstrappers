@@ -35,7 +35,7 @@ if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
     $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).path)\..\.."
     Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 
-    RefreshEnv.cmd
+    refreshenv
 } else {
     $chocoVersion = choco --version
     Write-Host "chocolatey v$chocoVersion already installed."
@@ -46,7 +46,7 @@ if (!(Get-Command "git.exe" -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Git"
     choco install -y git --params="'/GitAndUnixToolsOnPath /NoShellIntegration'"
 
-    RefreshEnv.cmd
+    refreshenv
 } else {
     Write-Host "git already installed."
 }
