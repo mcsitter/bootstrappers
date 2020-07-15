@@ -83,3 +83,7 @@ Invoke-Expression $firefoxScript
 $vscodeScript = Join-Path $bootstrappersDirectory "windows\vscode\Initialize-VSCode.ps1"
 Write-Host "Initializing VSCode"
 Invoke-Expression $vscodeScript
+
+# Remove desktop shortcuts
+Write-Host "Removing desktop shortcuts"
+Remove-Item "C:\Users\*\Desktop\*.lnk" -Force   
