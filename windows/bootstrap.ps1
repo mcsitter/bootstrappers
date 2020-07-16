@@ -29,17 +29,17 @@ if (!(Get-Command "choco.exe" -ErrorAction SilentlyContinue)) {
     Set-ExecutionPolicy Bypass -Scope Process -Force
     $chocoInstaller = Invoke-WebRequest "https://chocolatey.org/install.ps1" -UseBasicParsing
     Invoke-Expression $chocoInstaller
-
-    # Make `refreshenv` available right away, by defining the $env:ChocolateyInstall variable
-    # and importing the Chocolatey profile module.
-    $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).path)\..\.."
-    Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-
-    refreshenv
 } else {
     $chocoVersion = choco --version
     Write-Host "chocolatey v$chocoVersion already installed."
 }
+
+# Make `refreshenv` available right away, by defining the $env:ChocolateyInstall variable
+# and importing the Chocolatey profile module.
+$env:ChocolateyInstall = Convert-Path "$((Get-Command choco).path)\..\.."
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+
+refreshenv
 
 # Install Git
 if (!(Get-Command "git.exe" -ErrorAction SilentlyContinue)) {
