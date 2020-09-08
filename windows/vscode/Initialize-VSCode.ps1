@@ -6,6 +6,6 @@ foreach ($extension in $extensions) {
 }
 
 # Set VSCode settings
-$vscodeSettings = Get-Content -Path (Join-Path $PSScriptRoot "settings.json") -Raw
-$vscodeSettingsTarget = Join-Path $env:APPDATA  "Code\User\settings.json"
-New-Item $vscodeSettingsTarget -ItemType "file" -Value $vscodeSettings -Force
+# $vscodeSettings = Get-Content -Path (Join-Path $PSScriptRoot "settings.json") -Raw
+# $vscodeSettingsTarget = Join-Path $env:APPDATA  "Code\User\settings.json"
+# New-Item $vscodeSettingsTarget -ItemType "file" -Value $vscodeSettings -Force
