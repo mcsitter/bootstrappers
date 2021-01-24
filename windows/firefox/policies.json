@@ -5,6 +5,7 @@
     "DisableFirefoxStudies": true,
     "DisablePocket": true,
     "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": false,
     "EnableTrackingProtection": {
       "Cryptomining": true,
       "Fingerprinting": true,
@@ -46,7 +47,9 @@
     "PasswordManagerEnabled": false,
     "Preferences": {
       "browser.search.update": true,
-      "extensions.getAddons.showPane": false
+      "datareporting.policy.dataSubmissionPolicyBypassNotification": true,
+      "extensions.getAddons.showPane": false,
+      "security.ssl.errorReporting.enabled": false
     }
   }
 }
